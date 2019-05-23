@@ -1,0 +1,19 @@
+{
+  "name": "royce",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyuch4n/royce.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyuch4n/royce/issues"
+  },
+  "homepage": "https://github.com/kyuch4n/royce#readme"
+}
