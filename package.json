@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/kyuch4n/royce/issues"
   },
-  "homepage": "https://github.com/kyuch4n/royce#readme"
+  "homepage": "https://github.com/kyuch4n/royce#readme",
+  "devDependencies": {}
 }
