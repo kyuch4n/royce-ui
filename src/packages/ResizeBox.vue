@@ -70,6 +70,7 @@ export default {
       const { width, height } = this.getStyle(this.$el);
       this[this.dataType]({ event, width: parseInt(width), height: parseInt(height) });
       this.event = event;
+      // TODO: can emit event: onResize
     },
 
     tl({ event, width, height }) {
@@ -160,7 +161,7 @@ export default {
 
 .line:hover,
 .angle:hover {
-  background: #4586fb;
+  background: #1aa7cb;
 }
 
 .line-t {
