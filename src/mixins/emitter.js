@@ -1,5 +1,5 @@
 function broadcast(componentName, eventName, params) {
-  this.$children.forEach(child => {
+  this.$children.forEach((child) => {
     const name = child.$options.name;
 
     if (name === componentName) {
@@ -30,6 +30,6 @@ export default {
 
     broadcast(componentName, eventName, params) {
       broadcast.call(this, componentName, eventName, params);
-    }
-  }
+    },
+  },
 };
