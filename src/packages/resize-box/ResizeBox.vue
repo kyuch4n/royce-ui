@@ -70,7 +70,6 @@ export default {
       const { width, height } = this.getStyle(this.$el);
       this[this.dataType]({ event, width: parseInt(width), height: parseInt(height) });
       this.event = event;
-      // TODO: can emit event: onResize
     },
 
     tl({ event, width, height }) {
