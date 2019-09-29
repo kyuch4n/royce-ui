@@ -15,14 +15,12 @@ import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import replace from "rollup-plugin-replace";
 import resolve from "rollup-plugin-node-resolve";
-import serve from "rollup-plugin-serve";
-import { uglify } from "rollup-plugin-uglify";
 
 function getAllInputs() {
   const packages = {};
   const dir = path.join(__dirname, "../src/packages");
   const files = fs.readdirSync(dir);
-  files.forEach(file => packages[file] =`src/packages/${file}/index.js`);
+  files.forEach(file => packages[file] = `src/packages/${file}/index.js`);
   packages[name] = "src/index.js";
   return packages;
 }
@@ -31,10 +29,10 @@ function createRollupConfig(fileName, filePath) {
   return {
     input: filePath,
     output: {
-      file: `build/${fileName}.min.js`,
+      file: `lib/${fileName}.min.js`,
       format: "umd",
       name: fileName,
-      // sourcemap: true,
+      sourcemap: true,
     },
     plugins: [
       vue(),
@@ -43,17 +41,18 @@ function createRollupConfig(fileName, filePath) {
         parser: postcssScss,
         plugins: [
           base64({
-            extensions: [".png", ".jpeg", ".jpg", ".svg"],
             root: "src",
+            extensions: [".png", ".jpeg", ".jpg", ".svg"],
           }),
           autoprefixer({ add: true }),
         ],
+        minimize: true,
       }),
       alias({
-        resolve: [".js"],
+        "@": path.resolve(__dirname, "src"),
       }),
       replace({
-        "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development"),
+        "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
       }),
       resolve({
         jsnext: true,
@@ -66,12 +65,8 @@ function createRollupConfig(fileName, filePath) {
       babel({
         runtimeHelpers: true,
         exclude: "node_modules/**",
-        plugins: ["@babel/plugin-transform-arrow-functions"],
+        extensions: [".js", ".vue", ".es6", ".es", ".mjs"],
       }),
-      // 开发环境启动本地服务器
-      process.env.NODE_ENV === "development" && serve(),
-      // 线上环境开启代码压缩
-      process.env.NODE_ENV === "production" && uglify(),
     ],
   };
 }

@@ -16,7 +16,7 @@
 "use strict";
 
 export default {
-  name: "ResizeBox",
+  name: "resize-box",
 
   props: {
     max: {
@@ -143,7 +143,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .resize-box {
   position: relative;
   width: 100%;
