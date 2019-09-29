@@ -16,7 +16,7 @@
 "use strict";
 
 export default {
-  name: "resize-box",
+  name: "ResizeBox",
 
   props: {
     max: {
