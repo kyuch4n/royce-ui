@@ -1,10 +1,13 @@
 ---
 home: true
-heroImage: 
 actionText: 开始使用 →
-actionLink: /component/guide/introduction
+actionLink: /components/guide/introduction
 features:
 - title: 基于Vue2.X
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
+  details: 基于Vue2.X的不常用组件库。
+- title: 按需加载
+  details: rollup打包，支持按需加载。
+- title: 主题定制
+  details: 样式自定义。
 footer: MIT Licensed | Copyright © 2019-present kyuchan
 ---

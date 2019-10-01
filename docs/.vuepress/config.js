@@ -2,35 +2,34 @@ module.exports = {
   title: "RoyceUI",
   base: "/royce-ui/",
   description: "A Vue.js 2.0 Less Used UI Toolkit",
-  port: 8000, 
+  port: 8000,
   themeConfig: {
     nav: [
-      { text: '主页', link: '/' },
-      { text: '组件', link: '/component/guide/introduction' },
-      { text: '主题', link: '/theme/' },
+      { text: "主页", link: "/" },
+      { text: "组件", link: "/components/guide/introduction" },
+      { text: "更新日志", link: "/change-log/v1/versions" },
     ],
     sidebar: {
-      '/component/': [
+      "/components/": [
         {
-          title: '开发指南',
+          title: "开发指南",
           collapsable: false,
-          children: [
-            'guide/introduction',
-            'guide/guide'
-          ]
+          children: ["guide/introduction", "guide/installation", "guide/quickstart", "guide/custom-theme"],
         },
         {
-          title: '基础组件',
+          title: "组件",
           collapsable: false,
-          children: [
-            'basic/button',
-            'basic/input',
-            'basic/form',
-            'basic/notice'
-          ]
+          children: ["basic/resize-box"],
         },
-      ]
-    }
+      ],
+      "/change-log/": [
+        {
+          title: "更新日志",
+          collapsable: false,
+          children: ["v1/versions"],
+        },
+      ],
+    },
   },
   chainWebpack: config => config.module.rule("js").exclude.add(/royce-ui/),
-}
+};

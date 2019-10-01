@@ -1,5 +1,5 @@
 ---
-title: Notice
+title: ResizeBox
 ---
 
 # 提示
