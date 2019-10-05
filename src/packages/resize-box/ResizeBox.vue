@@ -1,5 +1,5 @@
 <template>
-  <div class="resize-box">
+  <div class="royce-resize-box">
     <div v-if="move.t" class="line line-t" data-type="t" @mousedown.prevent="onMousedown" />
     <div v-if="move.l" class="line line-l" data-type="l" @mousedown.prevent="onMousedown" />
     <div v-if="move.r" class="line line-r" data-type="r" @mousedown.prevent="onMousedown" />
@@ -16,7 +16,7 @@
 "use strict";
 
 export default {
-  name: "ResizeBox",
+  name: "resize-box",
 
   props: {
     max: {
@@ -37,7 +37,7 @@ export default {
     },
   },
 
-  created() {
+  mounted() {
     document.body.addEventListener("mouseup", this.onMouseup);
   },
 
@@ -144,95 +144,98 @@ export default {
 </script>
 
 <style lang="scss">
-.resize-box {
+@import "../../styles/var.scss";
+@import "../../styles/mixin.scss";
+
+@include b(resize-box) {
   position: relative;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-}
 
-.line,
-.angle {
-  position: absolute;
-  z-index: 999;
-  margin: auto;
-}
+  .line,
+  .angle {
+    position: absolute;
+    z-index: 999;
+    margin: auto;
+  }
 
-.line:hover,
-.angle:hover {
-  background: #1aa7cb;
-}
+  .line:hover,
+  .angle:hover {
+    background: #1aa7cb;
+  }
 
-.line-t {
-  top: -3px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 3px;
-  background: #edf0f7;
-  cursor: row-resize;
-}
+  .line-t {
+    top: -3px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: #edf0f7;
+    cursor: row-resize;
+  }
 
-.line-l {
-  top: 0;
-  left: -3px;
-  bottom: 0;
-  width: 3px;
-  height: 100%;
-  background: #edf0f7;
-  cursor: col-resize;
-}
+  .line-l {
+    top: 0;
+    left: -3px;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    background: #edf0f7;
+    cursor: col-resize;
+  }
 
-.line-r {
-  top: 0;
-  right: -3px;
-  bottom: 0;
-  width: 3px;
-  height: 100%;
-  background: #edf0f7;
-  cursor: col-resize;
-}
+  .line-r {
+    top: 0;
+    right: -3px;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    background: #edf0f7;
+    cursor: col-resize;
+  }
 
-.line-b {
-  left: 0;
-  right: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 3px;
-  background: #edf0f7;
-  cursor: row-resize;
-}
+  .line-b {
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background: #edf0f7;
+    cursor: row-resize;
+  }
 
-.angle {
-  width: 3px;
-  height: 3px;
-}
+  .angle {
+    width: 3px;
+    height: 3px;
+  }
 
-.angle-tl {
-  top: -3px;
-  left: -3px;
-  background: #edf0f7;
-  cursor: nwse-resize;
-}
+  .angle-tl {
+    top: -3px;
+    left: -3px;
+    background: #edf0f7;
+    cursor: nwse-resize;
+  }
 
-.angle-tr {
-  top: -3px;
-  right: -3px;
-  background: #edf0f7;
-  cursor: nesw-resize;
-}
+  .angle-tr {
+    top: -3px;
+    right: -3px;
+    background: #edf0f7;
+    cursor: nesw-resize;
+  }
 
-.angle-bl {
-  bottom: -3px;
-  left: -3px;
-  background: #edf0f7;
-  cursor: nesw-resize;
-}
+  .angle-bl {
+    bottom: -3px;
+    left: -3px;
+    background: #edf0f7;
+    cursor: nesw-resize;
+  }
 
-.angle-br {
-  bottom: -3px;
-  right: -3px;
-  background: #edf0f7;
-  cursor: nwse-resize;
+  .angle-br {
+    bottom: -3px;
+    right: -3px;
+    background: #edf0f7;
+    cursor: nwse-resize;
+  }
 }
 </style>

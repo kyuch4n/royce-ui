@@ -2,58 +2,32 @@
 title: ResizeBox
 ---
 
-# 提示
+# ResizeBox
 
-填写提示内容，点击按钮弹出提示
+可拖拽改变大小的容器组件。
 
-<script>
-export default {
-  data() {
-    return {
-      content: '提示内容'
-    }
-  },
-  methods: {
-    onNotice() {
-      this.$notice({
-        title: '提示',
-        content: this.content || '内容',
-        duration: 3
-      })
-    }
-  }
-}
-</script>
+## 三列布局
+
 <template>
   <div>
-    <l-input v-model="content"></l-input>
-    <l-button @click.native="onNotice" type="primary" style="margin-top: 20px;">触发提示</l-button>
+    <resize-box></resize-box>
   </div>
 </template>
+
+<script>
+export default {};
+</script>
 
 ```vue
-<script>
-export default {
-  data() {
-    return {
-      content: '提示内容'
-    }
-  },
-  methods: {
-    onNotice() {
-      this.$notice({
-        title: '提示',
-        content: this.content || '内容',
-        duration: 3
-      })
-    }
-  }
-}
-</script>
 <template>
   <div>
-    <l-input v-model="content"></l-input>
-    <l-button @click.native="onNotice" type="primary" style="margin-top: 20px;">触发提示</l-button>
+    <resize-box></resize-box>
   </div>
 </template>
+
+<script>
+export default {};
+</script>
 ```
+
+## Attributes

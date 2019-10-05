@@ -1,0 +1,9 @@
+$namespace: "royce";
+
+@mixin b($block) {
+  $B: $namespace + "-" + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
