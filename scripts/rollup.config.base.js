@@ -29,10 +29,9 @@ function createRollupConfig(fileName, filePath) {
   return {
     input: filePath,
     output: {
-      file: `lib/${fileName}.min.js`,
+      file: `lib/${fileName}.js`,
       format: "umd",
       name: fileName,
-      sourcemap: true,
     },
     plugins: [
       vue(),
