@@ -2,6 +2,11 @@ module.exports = {
   title: "RoyceUI",
   base: "/royce-ui/",
   description: "A Vue.js 2.0 Less Used UI Toolkit",
+  head: [
+    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/Royce.png"}],
+    ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/Royce.png"}],
+    ['link', { rel: "shortcut icon", href: "/Royce.ico"}],
+  ],
   port: 8000,
   themeConfig: {
     nav: [
