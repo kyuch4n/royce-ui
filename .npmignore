@@ -9,3 +9,4 @@ package-lock.json
 # folder
 /node_modules
 /dist
+/docs

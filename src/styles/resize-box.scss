@@ -20,75 +20,75 @@
   }
 
   .line-t {
-    top: -3px;
+    top: -($--border-thick);
     left: 0;
     right: 0;
     width: 100%;
-    height: 3px;
-    background: #edf0f7;
+    height: $--border-thick;
+    background: $--color-light-gray;
     cursor: row-resize;
   }
 
   .line-l {
     top: 0;
-    left: -3px;
+    left: -($--border-thick);
     bottom: 0;
-    width: 3px;
+    width: $--border-thick;
     height: 100%;
-    background: #edf0f7;
+    background: $--color-light-gray;
     cursor: col-resize;
   }
 
   .line-r {
     top: 0;
-    right: -3px;
+    right: -($--border-thick);
     bottom: 0;
-    width: 3px;
+    width: $--border-thick;
     height: 100%;
-    background: #edf0f7;
+    background: $--color-light-gray;
     cursor: col-resize;
   }
 
   .line-b {
     left: 0;
     right: 0;
-    bottom: -3px;
+    bottom: -($--border-thick);
     width: 100%;
-    height: 3px;
-    background: #edf0f7;
+    height: $--border-thick;
+    background: $--color-light-gray;
     cursor: row-resize;
   }
 
   .angle {
-    width: 3px;
-    height: 3px;
+    width: $--border-thick;
+    height: $--border-thick;
   }
 
   .angle-tl {
-    top: -3px;
-    left: -3px;
-    background: #edf0f7;
+    top: -($--border-thick);
+    left: -($--border-thick);
+    background: $--color-light-gray;
     cursor: nwse-resize;
   }
 
   .angle-tr {
-    top: -3px;
-    right: -3px;
-    background: #edf0f7;
+    top: -($--border-thick);
+    right: -($--border-thick);
+    background: $--color-light-gray;
     cursor: nesw-resize;
   }
 
   .angle-bl {
-    bottom: -3px;
-    left: -3px;
-    background: #edf0f7;
+    bottom: -($--border-thick);
+    left: -($--border-thick);
+    background: $--color-light-gray;
     cursor: nesw-resize;
   }
 
   .angle-br {
-    bottom: -3px;
-    right: -3px;
-    background: #edf0f7;
+    bottom: -($--border-thick);
+    right: -($--border-thick);
+    background: $--color-light-gray;
     cursor: nwse-resize;
   }
 }

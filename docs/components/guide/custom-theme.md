@@ -24,3 +24,7 @@ import "./royce-variables.scss";
 
 Vue.use(RoyceUI);
 ```
+
+## RoyceUI 的样式文件
+
+详细的样式变量可以参考 [var.scss](https://github.com/kyuch4n/royce-ui/blob/master/src/styles/common/var.scss)。

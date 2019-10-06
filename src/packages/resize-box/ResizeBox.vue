@@ -21,11 +21,11 @@ export default {
   props: {
     max: {
       type: Object,
-      default: () => ({ width: 0, height: 0 }),
+      default: () => ({}),
     },
     min: {
       type: Object,
-      default: () => ({ width: 0, height: 0 }),
+      default: () => ({}),
     },
     move: {
       type: Object,
@@ -94,11 +94,11 @@ export default {
 
     t({ event, height }) {
       if (event.y > this.event.y) {
-        this.$el.style.height = this.min.height
+        this.$el.style.height = this.min.height !== undefined
           ? `${Math.max(this.min.height, height - (event.y - this.event.y) * this.speed)}px`
           : `${height - (event.y - this.event.y) * this.speed}px`;
       } else {
-        this.$el.style.height = this.max.height
+        this.$el.style.height = this.max.height !== undefined
           ? `${Math.min(this.max.height, height + (this.event.y - event.y) * this.speed)}px`
           : `${height + (this.event.y - event.y) * this.speed}px`;
       }
@@ -106,11 +106,11 @@ export default {
 
     l({ event, width }) {
       if (event.x > this.event.x) {
-        this.$el.style.width = this.min.width
+        this.$el.style.width = this.min.width !== undefined
           ? `${Math.max(this.min.width, width - (event.x - this.event.x) * this.speed)}px`
           : `${width - (event.x - this.event.x) * this.speed}px`;
       } else {
-        this.$el.style.width = this.max.width
+        this.$el.style.width = this.max.width !== undefined
           ? `${Math.min(this.max.width, width + (this.event.x - event.x) * this.speed)}px`
           : `${width + (this.event.x - event.x) * this.speed}px`;
       }
@@ -118,11 +118,11 @@ export default {
 
     r({ event, width }) {
       if (event.x > this.event.x) {
-        this.$el.style.width = this.max.width
+        this.$el.style.width = this.max.width !== undefined
           ? `${Math.min(this.max.width, width + (event.x - this.event.x) * this.speed)}px`
           : `${width + (event.x - this.event.x) * this.speed}px`;
       } else {
-        this.$el.style.width = this.min.width
+        this.$el.style.width = this.min.width !== undefined
           ? `${Math.max(this.min.width, width - (this.event.x - event.x) * this.speed)}px`
           : `${width - (this.event.x - event.x) * this.speed}px`;
       }
@@ -130,11 +130,11 @@ export default {
 
     b({ event, height }) {
       if (event.y > this.event.y) {
-        this.$el.style.height = this.max.height
+        this.$el.style.height = this.max.height !== undefined
           ? `${Math.min(this.max.height, height + (event.y - this.event.y) * this.speed)}px`
           : `${height + (event.y - this.event.y) * this.speed}px`;
       } else {
-        this.$el.style.height = this.min.height
+        this.$el.style.height = this.min.height !== undefined
           ? `${Math.max(this.min.height, height - (this.event.y - event.y) * this.speed)}px`
           : `${height - (this.event.y - event.y) * this.speed}px`;
       }

@@ -1,7 +1,13 @@
+// color
 $--color-primary: #1b63a4 !default;
-$--color-white: #FFFFFF !default;
 
-$--color-info: #409EFF !default;
+$--color-white: #FFFFFF !default;
+$--color-light-gray: #F0F0F0 !default;
+
+$--color-info: #1b63a4 !default;
 $--color-success: #67C23A !default;
 $--color-warning: #E6A23C !default;
 $--color-danger: #F56C6C !default;
+
+// border
+$--border-thick: 3px !default;

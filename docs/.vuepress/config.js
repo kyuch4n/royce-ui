@@ -13,6 +13,7 @@ module.exports = {
       { text: "主页", link: "/" },
       { text: "组件", link: "/components/guide/introduction" },
       { text: "更新日志", link: "/change-log/v1/versions" },
+      { text: "GitHub", link: "https://github.com/kyuch4n/royce-ui" },
     ],
     sidebar: {
       "/components/": [
