@@ -2,13 +2,15 @@
 
 import serve from "rollup-plugin-serve";
 import rollupBaseConfig from "./rollup.config.base";
+import rollupStyleConfig from "./rollup.config.style";
 
-export default rollupBaseConfig.map((config, index) => {
+rollupBaseConfig.forEach((config, index) => {
   if (!index) {
     config.plugins = [
       ...config.plugins,
       serve({ port: 3000, contentBase: "src" }),
     ];
   }
-  return config;
 });
+
+export default rollupBaseConfig.concat(rollupStyleConfig);

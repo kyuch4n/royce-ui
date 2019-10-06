@@ -10,17 +10,21 @@ import alias from "rollup-plugin-alias";
 import replace from "rollup-plugin-replace";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
-import sass from "rollup-plugin-scss";
-import autoprefixer from "autoprefixer";
-import postcss from "postcss";
 import babel from "rollup-plugin-babel";
 
 function getAllInputs() {
   const packages = {};
   const dir = path.join(__dirname, "../src/packages");
   const files = fs.readdirSync(dir);
-  files.forEach(file => packages[file] = `src/packages/${file}/index.js`);
-  packages[name] = "src/index.js";
+
+  files.forEach((file) => {
+    const subDir = path.join(__dirname, `../src/packages/${file}`);
+    if (fs.lstatSync(subDir).isDirectory()) {
+      packages[file] = `src/packages/${file}/index.js`;
+    } else {
+      packages[name] = "src/packages/index.js";
+    }
+  });
   return packages;
 }
 
@@ -47,10 +51,6 @@ function createRollupConfig(fileName, filePath) {
       }),
       commonjs({
         include: "node_modules/**",
-      }),
-      sass({
-        processor: (css) => postcss([autoprefixer]).process(css).then((result) => result.css),
-        output: `lib/style/${fileName}.css`,
       }),
       babel({
         runtimeHelpers: true,

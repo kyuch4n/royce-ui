@@ -3,3 +3,17 @@
 2. 主题
 
 3. 文档
+module.exports = {
+  presets: ["@vue/app"],
+  plugins: [
+    [
+      "component",
+      {
+        "libraryName": "royce-ui",
+        "styleLibrary": { "name": "style" }
+      }
+    ]
+  ]
+};
+
+4. 不用lib，用src

@@ -1,6 +1,6 @@
 "use strict";
 
-import ResizeBox from "./packages/resize-box";
+import ResizeBox from "./resize-box";
 
 const components = {
   ResizeBox,
