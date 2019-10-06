@@ -2,7 +2,7 @@
 title: ResizeBox
 ---
 
-# ResizeBox
+## ResizeBox
 
 可拖拽改变大小的容器组件。
 

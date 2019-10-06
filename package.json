@@ -30,6 +30,7 @@
     "cross-env": "^6.0.0",
     "eslint": "^6.4.0",
     "eslint-plugin-vue": "^5.2.3",
+    "gh-pages": "^2.1.1",
     "postcss": "^7.0.18",
     "rollup": "^1.21.4",
     "rollup-plugin-alias": "^2.0.1",

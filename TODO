@@ -1,19 +1,7 @@
 1. SEO
 
-2. 主题
+2. 不用lib，用src
 
-3. 文档
-module.exports = {
-  presets: ["@vue/app"],
-  plugins: [
-    [
-      "component",
-      {
-        "libraryName": "royce-ui",
-        "styleLibrary": { "name": "style" }
-      }
-    ]
-  ]
-};
-
-4. 不用lib，用src
+3. 一个组件
+  文档
+  scss变量
