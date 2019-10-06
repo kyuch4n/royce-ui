@@ -1,6 +1,6 @@
 {
   "name": "royce-ui",
-  "version": "0.1.1-beta.2",
+  "version": "0.1.1-beta.4",
   "description": "A Vue.js 2.0 Less Used UI Toolkit",
   "main": "lib/royce-ui.js",
   "scripts": {
@@ -30,16 +30,14 @@
     "cross-env": "^6.0.0",
     "eslint": "^6.4.0",
     "eslint-plugin-vue": "^5.2.3",
-    "node-sass": "^4.12.0",
-    "postcss-base64": "^0.7.1",
-    "postcss-scss": "^2.0.0",
+    "postcss": "^7.0.18",
     "rollup": "^1.21.4",
     "rollup-plugin-alias": "^2.0.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-scss": "^1.0.2",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-uglify": "^6.0.3",
     "rollup-plugin-vue2": "^0.8.1",
@@ -47,6 +45,7 @@
     "vuepress": "^1.1.0"
   },
   "browserslist": [
-    "defaults"
+    "> 1%",
+    "last 2 versions"
   ]
 }

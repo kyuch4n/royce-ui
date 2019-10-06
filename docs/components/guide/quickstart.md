@@ -13,7 +13,7 @@ title: 快速上手
 ```javascript
 import Vue from "vue";
 import RoyceUI from "royce-ui";
-import "royce-ui/lib/royce-ui.min.css";
+import "royce-ui/lib/style/royce-ui.css";
 import App from "./App.vue";
 
 Vue.use(RoyceUI);

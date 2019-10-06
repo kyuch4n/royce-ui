@@ -6,15 +6,14 @@ const pkgJson = require("../package.json");
 const { name } = pkgJson;
 
 import vue from "rollup-plugin-vue2";
-import postcss from "rollup-plugin-postcss";
-import postcssScss from "postcss-scss";
-import autoprefixer from "autoprefixer";
-import base64 from "postcss-base64";
 import alias from "rollup-plugin-alias";
-import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
 import replace from "rollup-plugin-replace";
 import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
+import sass from "rollup-plugin-scss";
+import autoprefixer from "autoprefixer";
+import postcss from "postcss";
+import babel from "rollup-plugin-babel";
 
 function getAllInputs() {
   const packages = {};
@@ -35,18 +34,6 @@ function createRollupConfig(fileName, filePath) {
     },
     plugins: [
       vue(),
-      postcss({
-        extract: true,
-        parser: postcssScss,
-        plugins: [
-          base64({
-            root: "src",
-            extensions: [".png", ".jpeg", ".jpg", ".svg"],
-          }),
-          autoprefixer({ add: true }),
-        ],
-        minimize: true,
-      }),
       alias({
         "@": path.resolve(__dirname, "src"),
       }),
@@ -60,6 +47,10 @@ function createRollupConfig(fileName, filePath) {
       }),
       commonjs({
         include: "node_modules/**",
+      }),
+      sass({
+        processor: (css) => postcss([autoprefixer]).process(css).then((result) => result.css),
+        output: `lib/style/${fileName}.css`,
       }),
       babel({
         runtimeHelpers: true,
