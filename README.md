@@ -20,13 +20,8 @@
 > A Vue.js 2.0 Less Used UI Toolkit
 
 ### 🏠 [Homepage](https://github.com/kyuch4n/royce-ui#readme)
+
 ### 📖 [Docs](http://x.kyuchan.cn/royce-ui/)
-
-## Install
-
-```sh
-npm install
-```
 
 ## Author
 
