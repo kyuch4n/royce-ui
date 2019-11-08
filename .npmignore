@@ -1,10 +1,13 @@
 # file
 .DS_Store
+.babelrc
 .npm-debug.log
 .npmignore
 .eslintrc.json
-tsconfig.json
+.eslintignore
+.gitignore
 package-lock.json
+TODO.md
 
 # folder
 /node_modules
