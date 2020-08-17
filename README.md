@@ -21,7 +21,7 @@
 
 ### 🏠 [Homepage](https://github.com/kyuch4n/royce-ui#readme)
 
-### 📖 [Docs](http://x.kyuchan.cn/royce-ui/)
+### 📖 [Docs](https://kyuch4n.github.io/royce-ui/)
 
 ## Author
 
